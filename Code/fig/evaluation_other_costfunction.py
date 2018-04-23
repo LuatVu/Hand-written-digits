@@ -57,3 +57,8 @@ def make_plot():
     plt.legend(loc="lower right")
     plt.show()
 
+def main():
+    make_plot()
+
+if __name__ == "__main__":
+    main()

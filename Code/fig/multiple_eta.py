@@ -27,7 +27,7 @@ COLORS = ['#2A6EA6', '#FFCD33', '#FF7033']
 NUM_EPOCHS = 30
 
 def main():
-    run_networks()
+    # run_networks()
     make_plot()
 
 def run_networks():

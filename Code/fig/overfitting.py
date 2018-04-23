@@ -33,7 +33,7 @@ def main(filename, num_epochs,
     ``lmbda`` is the regularization parameter.  The other parameters
     set the epochs at which to start plotting on the x axis.
     """
-    run_network(filename, num_epochs, training_set_size, lmbda)
+    # run_network(filename, num_epochs, training_set_size, lmbda)
     make_plots(filename, num_epochs, 
                training_cost_xmin,
                test_accuracy_xmin,
@@ -96,7 +96,7 @@ def plot_training_cost(training_cost, num_epochs, training_cost_xmin):
     ax.set_xlim([training_cost_xmin, num_epochs])
     ax.grid(True)
     ax.set_xlabel('Epoch')
-    ax.set_title('Ham chi phi tren tap hoc')
+    ax.set_title('Cost on the training data')
     plt.show()
 
 def plot_test_accuracy(test_accuracy, num_epochs, test_accuracy_xmin):
@@ -109,7 +109,7 @@ def plot_test_accuracy(test_accuracy, num_epochs, test_accuracy_xmin):
     ax.set_xlim([test_accuracy_xmin, num_epochs])
     ax.grid(True)
     ax.set_xlabel('Epoch')
-    ax.set_title('Do chinh xac (%) tren tap kiem thu')
+    ax.set_title('Accuracy (%) on the test data')
     plt.show()
 
 def plot_test_cost(test_cost, num_epochs, test_cost_xmin):
@@ -121,7 +121,7 @@ def plot_test_cost(test_cost, num_epochs, test_cost_xmin):
     ax.set_xlim([test_cost_xmin, num_epochs])
     ax.grid(True)
     ax.set_xlabel('Epoch')
-    ax.set_title('Ham chi phi tren tap kiem thu')
+    ax.set_title('Cost on the test data')
     plt.show()
 
 def plot_training_accuracy(training_accuracy, num_epochs, 
@@ -135,7 +135,7 @@ def plot_training_accuracy(training_accuracy, num_epochs,
     ax.set_xlim([training_accuracy_xmin, num_epochs])
     ax.grid(True)
     ax.set_xlabel('Epoch')
-    ax.set_title('Do chinh xac (%) tren tap hoc')
+    ax.set_title('Accuracy (%) on the training data')
     plt.show()
 
 def plot_overlay(test_accuracy, training_accuracy, num_epochs, xmin,
@@ -145,12 +145,12 @@ def plot_overlay(test_accuracy, training_accuracy, num_epochs, xmin,
     ax.plot(np.arange(xmin, num_epochs), 
             [accuracy/100.0 for accuracy in test_accuracy], 
             color='#2A6EA6',
-            label="Do chinh xac tren tap kiem thu")
+            label="Accuracy on the test data")
     ax.plot(np.arange(xmin, num_epochs), 
             [accuracy*100.0/training_set_size 
              for accuracy in training_accuracy], 
             color='#FFA933',
-            label="Do chinh xac tren tap hoc")
+            label="Accuracy on the training data")
     ax.grid(True)
     ax.set_xlim([xmin, num_epochs])
     ax.set_xlabel('Epoch')
@@ -177,4 +177,3 @@ if __name__ == "__main__":
     main(filename, num_epochs, training_cost_xmin, 
          test_accuracy_xmin, test_cost_xmin, training_accuracy_xmin,
          training_set_size, lmbda)
-         
